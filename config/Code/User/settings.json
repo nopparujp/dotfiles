@@ -1,0 +1,55 @@
+{
+  // vscode preference
+  "window.menuBarVisibility": "toggle",
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "Tokyo Night",
+  "editor.fontFamily": "'JetBrains Mono NL','Droid Sans Mono', 'monospace'",
+  "editor.fontSize": 14,
+  "redhat.telemetry.enabled": false,
+  "files.autoSave": "afterDelay",
+  "workbench.iconTheme": "material-icon-theme",
+  "go.toolsManagement.autoUpdate": true,
+  "git.autofetch": true,
+
+  // vim
+  "vim.smartRelativeLine": true,
+
+  // side bar
+  "explorer.compactFolders": false,
+  "workbench.sideBar.location": "right",
+
+  // formatter
+  "editor.formatOnSave": true,
+  // "editor.tabSize": 4,
+  // "prettier.tabWidth": 4,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "trixnz.vscode-lua"
+  },
+
+  // code runner
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMap": {
+    "cpp": "g++ $dir$fileName -o $dir$fileNameWithoutExt.out && $dir$fileNameWithoutExt.out"
+  }
+}
