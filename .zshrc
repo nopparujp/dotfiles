@@ -12,7 +12,6 @@ compinit
 
 eval "$(starship init zsh)"
 
-# Alias
 alias ls="ls --color=auto"
 alias home="xrandr --output eDP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-2 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off"
 alias nb="xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output HDMI-2 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off"
@@ -22,6 +21,7 @@ alias chulavpn="sudo openconnect --protocol=anyconnect vpn.chula.ac.th --user 63
 export PATH=~/.cargo/bin:~/.local/bin:$PATH
 export EDITOR=nvim
 export VISUAL=nvim
+export GIT_EDITOR=nvim
 export QT_QPA_PLATFORMTHEME=qt5ct
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
@@ -35,11 +35,11 @@ source ~/.local/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlight
 source ~/.local/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 export WORKON_HOME=$HOME/.virtualenvs
+
 source ~/.local/bin/virtualenvwrapper.sh
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey -s ^f "tmux-sessionizer\n"
 
 case "$TERM" in (rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
     local term_title () { print -n "\e]0;${(j: :q)@}\a" }
@@ -56,3 +56,6 @@ case "$TERM" in (rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
 esac
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+
+zvm_after_init_commands+=('bindkey -s "^f" "tmux-sessionizer\n"')
+
