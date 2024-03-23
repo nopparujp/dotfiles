@@ -8,7 +8,7 @@ vim.opt.wrap = false
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.list = true
+vim.opt.list = false -- listchars 
 
 vim.opt.expandtab = true
 vim.opt.smarttab = true

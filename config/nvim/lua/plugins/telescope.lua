@@ -10,4 +10,10 @@ return {
         vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
     end
+    --    keys = {
+    --	    {"<leader>ff", "<cmd>Telescope find_files<cr>",desc = "Find Files"},
+    --	    {"<leader>fg", "<cmd>Telescope live_grep", desc = "Live Grep"},
+    --	    {"<leader>fb","<cmd>Telescope buffers", desc = "Buffers"},
+    --	    {"<leader>fh","<cmd>Telescope help_tags", desc = "Help Tags"}
+    --    }
 }
