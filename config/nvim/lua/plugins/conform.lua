@@ -14,10 +14,12 @@ return {
 			cpp = { "clang_format" },
 
 			-- run multiple formatters sequentially
-			python = { "isort", "black" },
+			-- python = { "isort", "black" },
+			python = { "autopep8" },
 
 			-- run only the first available formatter
 			javascript = { { "prettierd", "prettier" } },
+			typescript = { { "prettierd", "prettier" } },
 		},
 	},
 }

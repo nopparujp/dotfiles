@@ -6,19 +6,28 @@ return {
 
 		configs.setup({
 			ensure_installed = {
-				"python",
-				"c",
-				"lua",
 				"vim",
 				"vimdoc",
+
+				"markdown",
+				"latex",
+
+				"lua",
+				"c",
+				"cpp",
+				"go",
+				"rust",
+				"python",
+
 				"typescript",
 				"javascript",
-				"html",
-				"rust",
-				"go",
+				"tsx",
 			},
 			sync_install = false,
-			highlight = { enable = true },
+			highlight = {
+				enable = true,
+				disable = { "latex" },
+			},
 			indent = { enable = true },
 		})
 	end,

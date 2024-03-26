@@ -86,6 +86,7 @@ return { -- LSP Configuration & Plugins
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
 		--  Add any additional override configuration in the following tables. Available keys are:
 		--  - cmd (table): Override the default command used to start the server
 		--  - filetypes (table): Override the default list of associated filetypes for the server
@@ -97,7 +98,38 @@ return { -- LSP Configuration & Plugins
 			gopls = {},
 			pyright = {},
 			rust_analyzer = {},
-			tsserver = {},
+
+			tsserver = {
+				keys = {
+					{
+						"<leader>co",
+						function()
+							vim.lsp.buf.code_action({
+								apply = true,
+								context = {
+									only = { "source.organizeImports.ts" },
+									diagnostics = {},
+								},
+							})
+						end,
+						desc = "Organize Imports",
+					},
+					{
+						"<leader>cR",
+						function()
+							vim.lsp.buf.code_action({
+								apply = true,
+								context = {
+									only = { "source.removeUnused.ts" },
+									diagnostics = {},
+								},
+							})
+						end,
+						desc = "Remove Unused Imports",
+					},
+				},
+			},
+
 			lua_ls = {
 				settings = {
 					Lua = {
@@ -108,11 +140,14 @@ return { -- LSP Configuration & Plugins
 					},
 				},
 			},
+
+			texlab = {},
 		}
 
 		require("mason").setup()
 
 		local ensure_installed = vim.tbl_keys(servers or {})
+
 		-- formatter
 		vim.list_extend(ensure_installed, {
 			"stylua",
@@ -127,6 +162,7 @@ return { -- LSP Configuration & Plugins
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
+
 					-- This handles overriding only values explicitly passed
 					-- by the server configuration above. Useful when disabling
 					-- certain features of an LSP (for example, turning off formatting for tsserver)
