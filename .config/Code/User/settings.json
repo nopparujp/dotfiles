@@ -3,7 +3,7 @@
   "window.menuBarVisibility": "toggle",
   "window.zoomLevel": 1,
   "workbench.colorTheme": "Tokyo Night",
-  "editor.fontFamily": "'JetBrains Mono NL','Droid Sans Mono', 'monospace'",
+  "editor.fontFamily": "'JetBrains Mono NL', 'monospace'",
   "editor.fontSize": 14,
   "redhat.telemetry.enabled": false,
   "files.autoSave": "afterDelay",
